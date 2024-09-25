@@ -3,8 +3,9 @@ def main():
         file_contents = f.read()
 
     def sum_words(start, stop):
-        for range(end)
-        book_string = string.split()
+        book_string = []    
+        for words in file_contents(start, stop):
+            book_string.append(words)
         return book_string.index()
 
 main()
