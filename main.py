@@ -10,12 +10,15 @@ def main():
 
     def frequency(text):
         dictionary = {}
-        for words in text.lower():
-            for char in words:
-                if char == words:
-                    dictionary[text] += 1
+        for char in text.lower():
+            if char in dictionary:
+                dictionary[char] += 1
+            else:
+                dictionary[char] = 1
+                
         return dictionary
+    
     characters = frequency(file_contents)
     print(f"Here are the details about the characters: {characters}")
-    
+
 main()
