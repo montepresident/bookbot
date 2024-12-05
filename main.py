@@ -11,6 +11,8 @@ def main():
     def frequency(text):
         dictionary = {}
         for char in text.lower():
+            if char.isspace():
+                continue
             if char in dictionary:
                 dictionary[char] += 1
             else:
@@ -19,6 +21,9 @@ def main():
         return dictionary
     
     characters = frequency(file_contents)
-    print(f"Here are the details about the characters: {characters}")
+    sorted_dict = dict(sorted(characters.items()))
+    
+    for keys in sorted_dict:
+        print(f"The '{keys}' character was found {sorted_dict[keys]} times.")
 
 main()
